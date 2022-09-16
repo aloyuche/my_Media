@@ -1,0 +1,39 @@
+<%- include('partial/header') -%>
+
+<h1 class="marquee">
+  <marquee behavior="alternate" direction="left"
+    >WELCOME TO OUR PAGE <span>YOU CAN SHOP AT WILL</span>
+  </marquee>
+</h1>
+<div class="home-content">
+  <div class="col-sm-6 col-md-4" style="margin: 10% 25%">
+    <img src="/images/pineaapl.png" width="60%" alt="" />
+    <p>Welcome check our newly products</p>
+    <a href="/protPage" id="view-login" class="btn btn-danger">View us</a>
+
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <img src="/images/user.png" width="40%" alt="" />
+        <form action="/" method="post">
+          <label for="username">Username:</label><br />
+          <input type="text" name="username" id="username" />
+
+          <label for="password">Password:</label><br />
+          <input type="password" name="password" id="password" />
+
+          <br />
+          <a href="" class="button btn btn-primary">Log In</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partial/footer') -%>
+</div>
+
+<script>
+  document.getElementById("view-login").addEventListener("click", () => {
+    document.querySelector("bg-modal").style.display = "flex";
+  });
+</script>
