@@ -1,4 +1,4 @@
-require("dotenv").config;
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/authRoute");
@@ -33,11 +33,9 @@ app.use(flash());
 // view engine
 app.set("view engine", "ejs");
 
-const PORT = 8800;
-
 // Database
 mongoose
-  .connect("mongodb://localhost:27017/bloging")
+  .connect(process.env.MONGO_CONNECT)
   .then(() => console.log("Connected to mongoDB Successfully"))
   .catch((err) => console.log(err));
 
@@ -87,4 +85,7 @@ app.get("/api/:id", async (req, res) => {
   res.json(getSingleUser);
 });
 
-app.listen(PORT, console.log(`Server is on port ${PORT}`));
+app.listen(
+  process.env.PORT,
+  console.log(`Server is on port ${process.env.PORT}`)
+);

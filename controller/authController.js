@@ -6,6 +6,9 @@ const ErrorHandler = (err) => {
   console.log(err.message, err.code);
   let errors = { username: "", password: "" };
 
+  if (err.message === "Invalid password, must be more than 6 character") {
+    errors.password = "The Password isnot correct";
+  }
   //Duplicating Error
   if (err.code === 11000) {
     errors.username = "The Username already exist please log in";
@@ -13,13 +16,13 @@ const ErrorHandler = (err) => {
   }
 
   // Validating Errors
-  if (err.message.includes("user validation failed")) {
+  if (err.message.includes("userauth validation failed")) {
     Object.values(err.errors).forEach(({ properties }) => {
       // This will specify the exact error
-      err[properties.path] = properties.message;
+      errors[properties.path] = properties.message;
     });
   }
-  return err;
+  return errors;
 };
 
 // JWT TOKEN CREATION
@@ -34,18 +37,6 @@ const createToken = (id) => {
 module.exports.getAllUsers = async (req, res) => {
   const allUsers = await authModel.find();
   return allUsers;
-};
-
-module.exports.create = async (req, res) => {
-  const { name, username, email, dept, password } = req.body;
-  const newUser = await authModel.create({
-    name,
-    username,
-    email,
-    dept,
-    password,
-  });
-  res.json(newUser);
 };
 
 // Find One User
@@ -73,11 +64,9 @@ module.exports.signup_post = async (req, res) => {
       dept,
       password,
     });
-    console.log(User);
     const token = createToken(User._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    req.flash("User created successfully");
-    res.redirect("/");
+    res.json({ User });
   } catch (err) {
     const errors = ErrorHandler(err);
     res.status(400).json({ errors });

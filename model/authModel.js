@@ -1,18 +1,34 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const authSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: [true, "The username already exist"],
-    required: [true, "Please enter your Username"],
-    minlength: 6,
+const authSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    username: {
+      type: String,
+      unique: [true, "The username already exist"],
+      required: [true, "Please enter your Username"],
+      minlength: 6,
+    },
+    email: {
+      type: String,
+
+      required: true,
+    },
+    dept: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      minlength: [6, "Invalid password, must be more than 6 character"],
+    },
   },
-  password: {
-    type: String,
-    minlength: [6, "Invalid password, must be more than 6 character"],
-  },
-});
+  { timestamps: true }
+);
 
 // fire a function after doc is saved to db
 authSchema.post("save", (doc, next) => {

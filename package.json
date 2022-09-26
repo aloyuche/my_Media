@@ -4,8 +4,8 @@
   "description": "express",
   "main": "App.js",
   "scripts": {
-    "start": "nodemon Api.js",
-    "dev": "nodemon App.js"
+    "start": "nodemon App.js",
+    "dev": "nodemon Api.js"
   },
   "author": "cheloy",
   "license": "ISC",
