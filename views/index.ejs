@@ -1,0 +1,21 @@
+<%- include('partial/header') -%>
+
+<h1 class="marquee">
+  <marquee behavior="alternate" direction="left"
+    >WELCOME TO OUR PAGE <span>YOU CAN SHOP AT WILL</span>
+  </marquee>
+</h1>
+<div class="home-content">
+  <div class="clickme">
+    <img src="/images/pineaapl.png" width="10%" alt="" />
+    <p>Welcome check our newly products</p>
+    <a href="/protPage" id="view-login" class="btn btn-danger">View us</a>
+  </div>
+</div>
+<%- include('partial/footer') -%>
+
+<script>
+  document.getElementById("view-login").addEventListener("click", () => {
+    document.querySelector("bg-modal").style.display = "flex";
+  });
+</script>
