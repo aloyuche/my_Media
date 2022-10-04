@@ -44,6 +44,10 @@ app.get("/", async (req, res) => {
   res.render("index");
 });
 
+app.get("/home", requireAuth, (req, res) => {
+  res.render("home");
+});
+
 app.get("/protPage", requireAuth, (req, res) => {
   res.render("protPage");
 });
