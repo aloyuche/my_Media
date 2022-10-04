@@ -110,7 +110,7 @@ input {
 .usernameError,
 .passwordError {
   background-color: #e8c29a;
-  border: 1px solid #700808;
+  border: 1px solid transparent;
 }
 .thumbnail.img {
   width: 60%;
@@ -245,7 +245,19 @@ input {
   display: block;
   margin: 0 auto;
 }
-
+main{
+ display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.sidebar{
+ width:25%;
+  background: #000;
+}
+.content{
+ width: 75%;
+  background: wheat;
+}
 .close {
   position: absolute;
   top: 0;
