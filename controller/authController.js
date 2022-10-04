@@ -53,20 +53,22 @@ module.exports.login_get = (req, res) => {
   res.render("login", { message: req.flash() });
 };
 //Create New User
-module.exports.signup_post = async (req, res) => {
+module.exports.create = async (req, res) => {
   const { name, username, email, dept, password } = req.body;
 
   try {
-    const User = await authModel.create({
-      name,
-      username,
-      email,
-      dept,
-      password,
-    });
-    const token = createToken(User._id);
+    const user = new authModel({ name, username, email, dept, password });
+    await user.save();
+    // const User = await authModel.create({
+    //   name,
+    //   username,
+    //   email,
+    //   dept,
+    //   password,
+    // });
+    const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.json({ User });
+    res.json({ user });
   } catch (err) {
     const errors = ErrorHandler(err);
     res.status(400).json({ errors });
@@ -77,10 +79,10 @@ module.exports.signup_post = async (req, res) => {
 module.exports.login_post = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = await authModel.login(username, password);
-    const token = createToken(user._id);
+    const User = await authModel.login(username, password);
+    const token = createToken(User._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: user._id });
+    res.status(200).json({ user: User._id });
     // req.flash("message", "Successfully logged in");
     // res.redirect("/");
   } catch (error) {

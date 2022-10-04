@@ -44,6 +44,10 @@ app.get("/", async (req, res) => {
   res.render("index");
 });
 
+app.get("/home", requireAuth, (req, res) => {
+  res.render("home");
+});
+
 app.get("/protPage", requireAuth, (req, res) => {
   res.render("protPage");
 });
@@ -76,7 +80,7 @@ app.get("/api", async (req, res) => {
 
 app.post("/api", async (req, res) => {
   const { name, username, email, dept, password } = req.body;
-  const newUser = await create(name, username, email, dept, password);
+  const newUser = await create({ name, username, email, dept, password });
   res.json(newUser);
 });
 

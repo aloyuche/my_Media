@@ -63,7 +63,7 @@
         username_error.textContent = data.errors.username;
         password_error.textContent = data.errors.password;
       }
-      if (data.User) {
+      if (data.user) {
         location.assign("/");
       }
     } catch (err) {
