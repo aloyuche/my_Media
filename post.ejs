@@ -1,0 +1,26 @@
+<%- include('partial/header') -%>
+
+<div class="container">
+  <h1>Hello Welcome</h1>
+  <% if(allUsers.length >0) {%>
+    
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    <% for(let user of allUsers) {%>
+    <tr>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><a href=/updateUser/<%= user.username %><button>Update</button></a></td>
+        <td><a href=/post/<%= user.username %><button>Delete</button></a></td>
+    </tr>
+<%}%>
+</table>
+<%}else {%>
+        <p>You have no data to process!</p>
+<%}%>
+</div>
