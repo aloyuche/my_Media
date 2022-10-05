@@ -48,6 +48,14 @@ app.get("/home", requireAuth, (req, res) => {
   res.render("home");
 });
 
+app.get("/christian", (req, res) => {
+  res.render("christian");
+});
+
+app.get("/hip", (req, res) => {
+  res.render("hip");
+});
+
 app.get("/protPage", requireAuth, (req, res) => {
   res.render("protPage");
 });
