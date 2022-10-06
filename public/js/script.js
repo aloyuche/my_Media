@@ -9,10 +9,18 @@ const title = document.querySelector("#title");
 const musicCover = document.querySelector("#cover");
 
 // Song titles
-const songs = ["DonWilli", "DonMoen", "Marley", "DonWilly", "Bob"];
+const songs = [
+  "Bob",
+  "County",
+  "DonMoen",
+  "DonnieM",
+  "Marley3",
+  "Raggae",
+  "Marley",
+];
 
 // Keep Songs track
-let songIndex = 4;
+let songIndex = 6;
 
 //Initially load song info
 loadSong(songs[songIndex]);

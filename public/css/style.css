@@ -203,11 +203,27 @@ a:hover {
   width: 200px;
 }
 
+.img-containers {
+  position: relative;
+  width: 220px;
+}
+
 .img-container::after {
   content: "";
   background-color: #fff;
   height: 60px;
   width: 60px;
+  border-radius: 50%;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.img-containers::after {
+  content: "";
+  background-color: #fff;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   left: 50%;
   bottom: 50%;
@@ -228,7 +244,25 @@ a:hover {
   animation-play-state: paused;
 }
 
+.img-containers img {
+  width: inherit;
+  height: 210px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
 .music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+.music-container.play .img-containers img {
   animation-play-state: running;
 }
 
