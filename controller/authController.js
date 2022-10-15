@@ -1,4 +1,4 @@
-const authModel = require("../model/authModel");
+const userAuth = require("../model/authModel");
 const jwt = require("jsonwebtoken");
 
 // Error Handling
@@ -35,13 +35,13 @@ const createToken = (id) => {
 
 // To get allUsers
 module.exports.getAllUsers = async (req, res) => {
-  const allUsers = await authModel.find();
+  const allUsers = await userAuth.find();
   return allUsers;
 };
 
 // Find One User
 module.exports.findOne = async (req, res) => {
-  const User = await authModel.findOne();
+  const User = await userAuth.findOne();
   return User;
 };
 
@@ -54,18 +54,12 @@ module.exports.login_get = (req, res) => {
 };
 //Create New User
 module.exports.create = async (req, res) => {
-  const { name, username, email, dept, password } = req.body;
+  const { name, username, email, dept, dob, password } = req.body;
 
   try {
-    const user = new authModel({ name, username, email, dept, password });
+    const user = new userAuth({ name, username, email, dept, dob, password });
     await user.save();
-    // const User = await authModel.create({
-    //   name,
-    //   username,
-    //   email,
-    //   dept,
-    //   password,
-    // });
+
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.json({ user });
@@ -79,7 +73,7 @@ module.exports.create = async (req, res) => {
 module.exports.login_post = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const User = await authModel.login(username, password);
+    const User = await userAuth.login(username, password);
     const token = createToken(User._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json({ user: User._id });

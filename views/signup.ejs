@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="col-sm-6 col-md-4">
-    <form action="/" method="POST" class="form-register">
+    <form action="/login" method="POST" class="form-register">
       <h1>REGISTER HERE</h1>
       <div class="form-group">
         <label for="nam">Full Name:</label>
@@ -17,12 +17,17 @@
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" />
-        <div class="email error"></div>
+        <div class="emailError"></div>
       </div>
       <div class="form-group">
         <label for="dept">Department:</label>
         <input type="text" name="dept" id="dept" />
-        <div class="dept error"></div>
+        <div class="deptError"></div>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" placeholder="Date of Birth" name="dob" id="dept" />
+        <div class="dob error"></div>
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
@@ -50,11 +55,12 @@
     const username = form.username.value;
     const email = form.email.value;
     const dept = form.dept.value;
+    const dob = form.dob.value;
     const password = form.password.value;
     try {
       const res = await fetch("/signup", {
         method: "POST",
-        body: JSON.stringify({ name, username, email, dept, password }),
+        body: JSON.stringify({ name, username, email, dept, dob, password }),
         headers: { "Content-Type": "application/json" },
       });
       const data = await res.json();
@@ -64,7 +70,7 @@
         password_error.textContent = data.errors.password;
       }
       if (data.user) {
-        location.assign("/");
+        location.assign("/login");
       }
     } catch (err) {
       console.log(err);

@@ -22,6 +22,11 @@ const authSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    dob: {
+      type: Date,
+      required: true,
+    },
+
     password: {
       type: String,
       minlength: [6, "Invalid password, must be more than 6 character"],

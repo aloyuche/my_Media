@@ -22,13 +22,13 @@ nav {
   padding: 20px;
 }
 .container {
-  background-image: url("/images/m6.jpg");
+  background-image: url("/images/Bob.jpg");
   align-items: center;
   justify-content: center;
   position: absolute;
   margin: 0;
   padding: 10px;
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 
@@ -71,9 +71,8 @@ a {
   font-size: 1.3rem;
   margin: 10% 50%;
   width: 100%;
-  box-shadow: 2px 3px 3px 2px rgb(19, 1, 1);
+  box-shadow: 2px 3px 3px 2px rgb(241, 240, 240);
   padding: 20px;
-  color: #1e0606;
   font-size: 1.1em;
 }
 p {
@@ -94,12 +93,12 @@ input {
   box-shadow: 2px #555;
 }
 .home-content {
-  background-image: url("/images/m7.jpg");
+  background-image: url("/images/County.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -111,7 +110,7 @@ input {
 .usernameError,
 .passwordError {
   background-color: #e8c29a;
-  border: 1px solid #700808;
+  border: none;
 }
 .thumbnail.img {
   width: 60%;
@@ -146,10 +145,42 @@ main {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  width: 100%;
 }
 .sidebar {
   width: 25%;
   background-color: #1b1b1b;
+  height: 100%;
+  left: 0;
+  top: 0;
+  /* position: fixed; */
+}
+.sidebar .logo {
+  color: white;
+  display: flex;
+  padding: 20px;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+.logo i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.logo .logo-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.sidebar #btn {
+  position: absolute;
+  top: 6px;
+  left: 20%;
+  font-size: 22px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  color: white;
+  transform: translate(-50%);
 }
 nav {
   display: block;
@@ -157,12 +188,13 @@ nav {
 li {
   display: block;
   width: 100%;
-  padding: 12px;
+  padding: 12px 0;
 }
 a {
   text-transform: uppercase;
   line-height: 1.2em;
   font-size: 1.4em;
+  width: 100%;
 }
 li:hover {
   background-color: #ddd;
@@ -193,8 +225,11 @@ a:hover {
   border-radius: 15px;
   box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
   display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   padding: 20px 30px;
-  margin: 200px 0;
+  /* margin: 200px 0; */
   z-index: 10;
   position: relative;
 }
@@ -215,24 +250,24 @@ a:hover {
   width: 60px;
   border-radius: 50%;
   left: 50%;
-  bottom: 50%;
+  bottom: 60%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
 .img-containers::after {
   content: "";
   background-color: #fff;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   left: 50%;
-  bottom: 50%;
+  bottom: 60%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
 .img-container img {
   width: inherit;
-  height: 200px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -246,7 +281,7 @@ a:hover {
 
 .img-containers img {
   width: inherit;
-  height: 210px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -293,16 +328,16 @@ a:hover {
 
 .action-btn-big {
   color: #cddccd;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .music-info {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top: 0;
-  left: 20px;
-  padding: 10px 10px 10px 220px;
+  top: 10px;
+  left: 280px;
+  padding: 20px 20px 20px 230px;
   width: calc(100% -40px);
   opacity: 0;
   transform: translateY(0%);

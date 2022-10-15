@@ -56,6 +56,10 @@ app.get("/hip", (req, res) => {
   res.render("hip");
 });
 
+app.get("/afro", (req, res) => {
+  res.send("afro");
+});
+
 app.get("/protPage", requireAuth, (req, res) => {
   res.render("protPage");
 });
