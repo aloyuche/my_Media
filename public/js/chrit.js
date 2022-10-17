@@ -10,13 +10,15 @@ const musicCover = document.querySelector("#cover");
 
 // Song titles
 const songs = [
-  "DonWilli",
-  "DonWillia",
-  "DonMoen",
+  "Bob_fitts_-_05._Our_God",
+  "chineke_m_kaa_midweek_praise",
+  "Chinyere_udoma_Well_Loaded",
   "DonnieM",
   "DonWilly",
   "DonnieMI",
-  "Before_the_throne",
+  "B4DThrone",
+  "Chinecherem",
+  "Chinwe_ike",
 ];
 
 // Keep Songs track
@@ -28,8 +30,8 @@ loadSong(songs[songIndex]);
 //update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `musi/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  audio.src = `https://res.cloudinary.com/cheloytec/video/upload/v1665333973/online-music/${song}.mp3`;
+  cover.src = `https://res.cloudinary.com/cheloytec/image/upload/v1665333970/online-shop/${song}.jpg`;
 }
 function playSong() {
   musicContent.classList.add("play");

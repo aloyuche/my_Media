@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Contents</title>
+  </head>
+  <body class="music-page">
+    <main>
+      <div class="sidebar px-6">
+        <div class="logo">
+          <i class="fa-solid fa-user-gear mx-2"></i>
+          <div class="logo-name">CHELOYTEC</div>
+        </div>
+
+        <i
+          class="btn fa-solid fa-bars text-white bg-grey px-4 py-1"
+          id="btn"
+        ></i>
+
+        <nav>
+          <li class="side">
+            <a href="/christian"
+              ><i class="fa-sharp fa-solid fa-church mx-2"></i>Christian
+              Music</a
+            >
+          </li>
+          <li class="side">
+            <a href="/hip"
+              ><i class="fa-solid fa-clipboard-user mx-2"></i>Trending Hip
+              Hop</a
+            >
+          </li>
+          <li class="side">
+            <a href="/afro"
+              ><i class="fa-solid fa-bolt mx-2"></i>Afro Beat Music</a
+            >
+          </li>
+          <li class="side">
+            <a href="/raggae"
+              ><i class="fa-regular fa-biohazard mx-2"></i>Raeggae Music</a
+            >
+          </li>
+          <li class="side">
+            <a href="/current"
+              ><i class="fa-solid fa-land-mine-on mx-2"></i>Current Music</a
+            >
+          </li>
+          <li class="side">
+            <a href="/logout"
+              ><i class="fa-solid fa-right-from-bracket mx-2"></i>Log Out</a
+            >
+          </li>
+        </nav>
+      </div>
+      <div class="content">
+        <h2 style="top: 10px">My Music Players</h2>
+
+        <div class="music-container">
+          <div class="music-info">
+            <p id="title">Don William</p>
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+          </div>
+          <audio
+            src="https://res.cloudinary.com/cheloytec/video/upload/v1665333973/online-music/DonnWil.mp3"
+            id="audio"
+            width="70%"
+          ></audio>
+
+          <div class="img-container">
+            <img
+              src="https://res.cloudinary.com/cheloytec/image/upload/v1665333970/online-shop/DonnWil.jpg"
+              alt="DonnWil"
+              id="cover"
+            />
+          </div>
+          <div class="navigation">
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

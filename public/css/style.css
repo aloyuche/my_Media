@@ -366,6 +366,21 @@ a:hover {
   transition: width 0.1s linear;
 }
 
+@media screen and (max-width: 780) {
+  .navigation {
+    width: 50%;
+    padding: 10px;
+  }
+  .content {
+    width: 60%;
+  }
+  .sidebar {
+    width: 30%;
+    font-size: 12px;
+    line-height: 1.1rem;
+  }
+}
+
 .col-sm-6.col-md-3 {
   width: 23%;
   padding: 10px;
