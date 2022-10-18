@@ -10,13 +10,14 @@ const musicCover = document.querySelector("#cover");
 
 // Song titles
 const songs = [
-  "Bob",
-  "County",
+  "DonnWil",
   "DonMoen",
-  "DonnieM",
-  "Marley3",
+  "Arabanko",
+  "Bob",
   "Raggae",
   "Marley",
+  "DonnWilli",
+  "AnewDay",
 ];
 
 // Keep Songs track
@@ -28,8 +29,8 @@ loadSong(songs[songIndex]);
 //update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  audio.src = `https://res.cloudinary.com/cheloytec/video/upload/v1665333973/online-music/${song}.mp3`;
+  cover.src = `https://res.cloudinary.com/cheloytec/image/upload/v1665333970/online-shop/${song}.jpg`;
 }
 function playSong() {
   musicContent.classList.add("play");
