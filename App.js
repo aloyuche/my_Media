@@ -48,7 +48,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(flash());
-// app.use(paginate.middleware(process.env.LIMIT, process.env.MAX_LIMIT))
 
 // view engine
 app.set("view engine", "ejs");
