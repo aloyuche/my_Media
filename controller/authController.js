@@ -5,6 +5,13 @@ const jwt = require("jsonwebtoken");
 const ErrorHandler = (err) => {
   console.log(err.message, err.code);
   let errors = { username: "", password: "" };
+  if (err.message === "Incorrect Username") {
+    errors.username = "Invalid username";
+  }
+
+  if (err.message === "Incorrect password") {
+    errors.password = "Invalid Password";
+  }
 
   if (err.message === "Invalid password, must be more than 6 character") {
     errors.password = "The Password isnot correct";

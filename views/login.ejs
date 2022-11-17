@@ -44,51 +44,34 @@
   <body>
     <div class="header">
       <div class="logo">
-        <img src="images/belma_logo.png" width="100%" alt="" />
+        <h2 class="logo py-4 px-6">CHELOYTEC</h2>
       </div>
-      <div class="nav">
-        <div class="topnav" id="myTopnav">
-          <a href="#contact"><i class="fa-regular fa-id-card"></i>Contact</a>
-          <div class="dropdown">
-            <button class="dropbtn">
-              <i class="fa fa-shopping-cart"></i> Shopping Cart
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="signup">Check Out</a>
-              <!-- <a href="login">Log In</a>
-              <a href="logout">Log Out</a> -->
-            </div>
-          </div>
-          <div class="log">
-            <a href="signup"
-              ><i class="fa-solid fa-right-to-bracket"></i>Sign Up
-            </a>
-          </div>
-
-          <a
-            href="javascript:void(0);"
-            style="font-size: 15px"
-            class="icon"
-            onclick="myFunction()"
-            >&#9776;</a
-          >
-        </div>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a href="/"><i class="fa fa-home me-2"></i>HOME</a>
+          </li>
+          <li>
+            <a href="/logout" class="btn btn-primary ms-2"
+              ><i class="fa fa-sign-in me-2"></i>LOG OUT</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
     <div class="container">
       <div class="col-sm-6 col-md-4">
         <% if(message.length > 0) {%> <%= message %> <%}%>
-        <form action="/" method="POST" class="form-register">
+        <form class="form-register">
           <h1>LOG IN HERE</h1>
           <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="username" />
             <div class="username error"></div>
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" />
             <div class="password error"></div>
           </div>
           <br /><br />

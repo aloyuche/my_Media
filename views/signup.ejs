@@ -1,79 +1,160 @@
-<%- include('partial/header') -%>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
 
-<div class="container">
-  <div class="col-sm-6 col-md-4">
-    <form action="/login" method="POST" class="form-register">
-      <h1>REGISTER HERE</h1>
-      <div class="form-group">
-        <label for="nam">Full Name:</label>
-        <input type="text" name="name" id="name" />
-        <div class="name error"></div>
-      </div>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" />
-        <div class="usernameError"></div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" />
-        <div class="emailError"></div>
-      </div>
-      <div class="form-group">
-        <label for="dept">Department:</label>
-        <input type="text" name="dept" id="dept" />
-        <div class="deptError"></div>
-      </div>
-      <div class="form-group">
-        <label for="dob">Date Of Birth:</label>
-        <input type="date" placeholder="Date of Birth" name="dob" id="dept" />
-        <div class="dob error"></div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
-        <div class="passwordError"></div>
-      </div>
+    <!-- Optional theme -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Latest compiled and minified JavaScript -->
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
 
-      <button class="btn btn-success">Sign Up</button>
-      <p>New user please <a href="login">Log in</a></p>
-    </form>
-  </div>
-</div>
-<script>
-  const form = document.querySelector("form");
-  const username_error = document.querySelector(".usernameError");
-  const password_error = document.querySelector(".passwordError");
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    // Reset error
-    username_error.textContent = "";
-    username_error.textContent = "";
-    // Get Values
-    const name = form.name.value;
-    const username = form.username.value;
-    const email = form.email.value;
-    const dept = form.dept.value;
-    const dob = form.dob.value;
-    const password = form.password.value;
-    try {
-      const res = await fetch("/signup", {
-        method: "POST",
-        body: JSON.stringify({ name, username, email, dept, dob, password }),
-        headers: { "Content-Type": "application/json" },
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Movie World</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <h2 class="logo py-4 px-6">CHELOYTEC</h2>
+      </div>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a href="/"><i class="fa fa-home me-2"></i>HOME</a>
+          </li>
+          <li>
+            <a href="/logout" class="btn btn-primary ms-2"
+              ><i class="fa fa-sign-in me-2"></i>LOG OUT</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-6 col-md-4">
+        <form class="form-register">
+          <h1>REGISTER HERE</h1>
+          <div class="form-group">
+            <label for="nam">Full Name:</label>
+            <input type="text" name="name" id="name" />
+            <div class="name error"></div>
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" />
+            <div class="usernameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" />
+            <div class="emailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="dept">Department:</label>
+            <input type="text" name="dept" id="dept" />
+            <div class="deptError"></div>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date Of Birth:</label>
+            <input
+              type="date"
+              placeholder="Date of Birth"
+              name="dob"
+              id="dob"
+            />
+            <div class="dob error"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" />
+            <div class="passwordError"></div>
+          </div>
+
+          <button class="btn btn-success">Sign Up</button>
+          <p>
+            New user please
+            <a href="login" class="btn btn-outline-dark">Log in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const username_error = document.querySelector(".usernameError");
+      const password_error = document.querySelector(".passwordError");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        // Reset error
+        username_error.textContent = "";
+        username_error.textContent = "";
+        // Get Values
+        const name = form.name.value;
+        const username = form.username.value;
+        const email = form.email.value;
+        const dept = form.dept.value;
+        const dob = form.dob.value;
+        const password = form.password.value;
+        try {
+          const res = await fetch("/signup", {
+            method: "POST",
+            body: JSON.stringify({
+              name,
+              username,
+              email,
+              dept,
+              dob,
+              password,
+            }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await res.json();
+          console.log(data);
+          if (data.errors) {
+            username_error.textContent = data.errors.username;
+            password_error.textContent = data.errors.password;
+          }
+          if (data.user) {
+            location.assign("/login");
+          }
+        } catch (err) {
+          console.log(err);
+        }
       });
-      const data = await res.json();
-      console.log(data);
-      if (data.errors) {
-        username_error.textContent = data.errors.username;
-        password_error.textContent = data.errors.password;
-      }
-      if (data.user) {
-        location.assign("/login");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
-</script>
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
