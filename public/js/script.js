@@ -17,6 +17,7 @@ const songs = [
   "Raggae",
   "BOB_MARLEY-Stir_up",
   "Marley",
+  "2_face_-_See_me_so",
   "DonnWilli",
   "AnewDay",
 ];
