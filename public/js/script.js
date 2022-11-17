@@ -11,11 +11,13 @@ const musicCover = document.querySelector("#cover");
 // Song titles
 const songs = [
   "DonnWil",
-  "DonMoen",
+  "2_luv_u_more",
   "Arabanko",
   "Bob",
   "Raggae",
+  "BOB_MARLEY-Stir_up",
   "Marley",
+  "2_face_-_See_me_so",
   "DonnWilli",
   "AnewDay",
 ];

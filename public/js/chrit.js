@@ -14,11 +14,14 @@ const songs = [
   "chineke_m_kaa_midweek_praise",
   "Chinyere_udoma_Well_Loaded",
   "DonnieM",
+  "03_I_Belong_to_You",
   "DonWilly",
   "DonnieMI",
   "B4DThrone",
   "Chinecherem",
+  "YOU_RAISED_ME_UP",
   "Chinwe_ike",
+  "Ana_Bara_Chukwu_Mba",
 ];
 
 // Keep Songs track
